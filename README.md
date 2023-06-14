@@ -1,4 +1,4 @@
-# <img src = "./logo.svg" align = "center" width = 50/> Deno Github API Wrapper
+# <img src = "./static/logo.svg" align = "center" width = 50/> Deno Github API Wrapper
 
 > Simple wrapper of the GitHub (graphql) API for [Deno 🦕](https://deno.com/)
 

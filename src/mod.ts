@@ -1,17 +1,34 @@
+// deno-lint-ignore no-unused-vars
 import Client from './client.ts';
+import RepositoryBuilder from './models/Repository.ts';
+export * from './schema.ts';
 
 export { default as Client } from './client.ts'
+export {
+  RepositoryBuilder,
+
+}
 
 if (import.meta.main) {
+  /*
+  const client = new Client(Deno.env.get('GH_TOKEN'));
 
-  const client = new Client('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');
+  let query = client.users
+  .getUserByUsername('darkdarcool')
+    .selectFields('id')
+    .selectStars(
+      new RepositoryBuilder()
+        .select('id', 'updatedAt'),
+      { last: 10 }
+    )
+    .build();
+    */
 
-  let query = client.users.getUserByUsername('darkdarcool').selectFields('bio', 'createdAt').build();
 
-  console.log(query);
+ // let data = await client.execute(query.query, query.variables);
 
-  let res = await client.execute(query);
+ // console.log(data);
 
-  console.log(res);
-
+  // create type from schema
+  
 }

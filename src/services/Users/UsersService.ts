@@ -11,7 +11,6 @@ export default class Users extends Service {
    * @param login Username of the user to get
    */
   getUserByUsername(login: string) {
-    
     return new UsersQueryBuilder(login);
   }
 

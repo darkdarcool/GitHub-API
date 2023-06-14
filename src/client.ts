@@ -1,4 +1,3 @@
-import * as gql from 'npm:gql-query-builder';
 import Users from "./services/Users/UsersService.ts";
 import execute from './executor.ts';
 
@@ -23,9 +22,11 @@ export default class Client {
   /**
    * Run a query against the GitHub API
    */
-  execute(query: string) {
-    return execute(query, this.ghToken).then(res => res.data);
-  }
+  async execute(query: string, variables: Record<string, string>) {
+    const data = await execute(query, variables, this.ghToken);
 
-  
+    if (!data.errors) return data.data;
+    else console.error(data.errors)
+
+  }
 }
